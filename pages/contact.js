@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import LeftContact from "../components/LeftContact"
-import RightContact from "../components/RightContact"
+import LeftContact from "../components/Contact/LeftContact"
+import RightContact from "../components/Contact/RightContact"
+import PageMeta from "@/components/Common/PageMeta"
 
 const MainCont = styled.div`
   /* background: #fbfbfb; */
@@ -35,6 +36,11 @@ const MainCont = styled.div`
 function Contact() {
   return (
     <MainCont>
+      <PageMeta
+        title="Club Excel - Contact"
+        description="Contact with club Excel Team"
+        icon="/clubexcellogo.png"
+      />
       <div className="contact">
         <LeftContact />
         <RightContact />

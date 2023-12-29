@@ -1,5 +1,5 @@
-import Card from "./components/Card"
 import { v4 as uuidv4 } from "uuid"
+import Card from "./components/Carroussel/Card"
 
 export const clubMembers = [
   {

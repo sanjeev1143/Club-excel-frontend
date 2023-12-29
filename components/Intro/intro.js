@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import RoundBall from "./roundball"
 
 const MainCont = styled.div`
   display: flex;
@@ -25,8 +24,8 @@ const MainCont = styled.div`
     font-weight: bolder;
     line-height: normal;
     @media (max-width: 800px) {
-   text-align: center;
-  }
+      text-align: center;
+    }
   }
 
   .arrow {
@@ -57,7 +56,6 @@ const MainCont = styled.div`
       text-align: center;
       margin-left: 0;
       width: 360px;
-
     }
   }
   .intro {
@@ -72,17 +70,14 @@ const MainCont = styled.div`
     line-height: normal;
     @media (max-width: 800px) {
       text-align: center;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
     }
   }
-  .flex{
+  .flex {
     @media (max-width: 800px) {
       text-align: center;
-    
-
     }
   }
 `

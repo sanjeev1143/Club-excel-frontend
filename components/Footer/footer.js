@@ -15,7 +15,6 @@ const MainCont = styled.div`
     background: transparent;
   }
 
- 
   .footer {
     display: flex;
     align-items: center;
@@ -139,19 +138,16 @@ const MainCont = styled.div`
     @media (min-width: 800px) and (max-width: 1440px) {
       margin-top: 30px;
       gap: 35px;
-
     }
 
     @media (max-width: 800px) {
       margin-top: 0px;
       gap: 5px;
-      margin-bottom:15px;
-
+      margin-bottom: 15px;
     }
   }
 
-
-  .ftxt{
+  .ftxt {
     &:hover {
       .bar {
         width: 100%;
@@ -161,7 +157,6 @@ const MainCont = styled.div`
       }
     }
     white-space: nowrap;
-
   }
 `
 
@@ -171,49 +166,43 @@ function Footer() {
     <MainCont>
       <div className="footer">
         <div className="flex">
-          <div
-            className="logo-img"
-            onClick={() => router.push("/")}
-          >
+          <Link href="/">
             <Image
-            loading="lazy"
+              loading="lazy"
               src={"/clubexcellogo.png"}
               height={185}
               width={185}
               alt="club-excel"
             />
-          </div>
+          </Link>
           <div className="vector-20"></div>
           <div className="sec">
             <div className="link">
-              <div
-                className="pointer ftxt"
-                onClick={() => router.push("/register")}
-              >
-                REGISTER
-                <div className='bar'></div>
-
-              </div>
+              <Link href="/register">
+                <div className="pointer ftxt text">
+                  REGISTER
+                  <div className="bar"></div>
+                </div>
+              </Link>
             </div>
             <div className="link">
-              <div
-                className="pointer ftxt"
-                onClick={() => router.push("/contact")}
-              >
-                CONTACT
-                <div className='bar'></div>
-
-              </div>
-
+              <Link href="/contact">
+                <div className="pointer ftxt text">
+                  CONTACT
+                  <div className="bar"></div>
+                </div>
+              </Link>
             </div>
 
             <div className="link">
-              <div className="pointer ftxt"
-                              onClick={() => router.push("/team")}
-
-              >OUR TEAM
-              <div className='bar'></div>
-</div>
+              <div className="link">
+                <Link href="/contact">
+                  <div className="pointer ftxt text">
+                    CONTACT
+                    <div className="bar"></div>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
           <div className="vector-20"></div>
@@ -222,7 +211,7 @@ function Footer() {
             <div className="social">
               <div className="pointer hover">
                 <Image
-                loading="lazy"
+                  loading="lazy"
                   src={"/instagram.svg"}
                   height={32}
                   width={32}
@@ -236,7 +225,7 @@ function Footer() {
               </div>
               <div className="pointer hover">
                 <Image
-                loading="lazy"
+                  loading="lazy"
                   src={"/twitter1.svg"}
                   height={32}
                   width={32}
@@ -250,7 +239,7 @@ function Footer() {
               </div>
               <div className="pointer hover">
                 <Image
-                loading="lazy"
+                  loading="lazy"
                   src={"/facebook.svg"}
                   height={32}
                   width={32}
@@ -264,7 +253,7 @@ function Footer() {
               </div>
               <div className="pointer hover">
                 <Image
-                loading="lazy"
+                  loading="lazy"
                   src={"/linkedin.svg"}
                   height={32}
                   width={32}
@@ -278,13 +267,11 @@ function Footer() {
               </div>
             </div>
 
-            <div
-              className="button"
-              onClick={() => router.push("/contact")}
-            >
-              <span className="send">CONTACT US</span>
-            </div>
-
+            <Link href="/contact">
+              <div className="button">
+                <span className="send">CONTACT US</span>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="vector-17"></div>

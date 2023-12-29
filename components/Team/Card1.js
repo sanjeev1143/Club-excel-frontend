@@ -63,7 +63,7 @@ function Card1({ data }) {
       <div className="card1 pointer hover">
         <div className="partners-pic">
           <Image
-          loading="lazy"
+            loading="lazy"
             className="card1-graphics"
             src={data ? data.img : "/clubexcellogo.png"}
             height={170}

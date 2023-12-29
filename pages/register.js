@@ -1,7 +1,8 @@
 import Head from "next/head"
-import Form from "@/components/form"
+import Form from "@/components/Registration/form"
 import styled from "styled-components"
-import ParticleAmin from "@/components/Particles"
+import ParticleAmin from "@/components/Registration/Particles"
+import PageMeta from "@/components/Common/PageMeta"
 
 const MainCont = styled.div`
   display: flex;
@@ -14,6 +15,11 @@ const MainCont = styled.div`
 export default function Home() {
   return (
     <>
+      <PageMeta
+        title="Club Excel - Registration"
+        description="Club Excel Registration Form."
+        icon="/clubexcellogo.png"
+      />
       <Head>
         <title>Registration Form</title>
         <meta
@@ -32,7 +38,7 @@ export default function Home() {
           rel="preconnect"
           href="https://fonts.googleapis.com"
         />
-        
+
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -46,7 +52,7 @@ export default function Home() {
 
       <MainCont>
         <ParticleAmin>
-        <Form />
+          <Form />
         </ParticleAmin>
       </MainCont>
     </>

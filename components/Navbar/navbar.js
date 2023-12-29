@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Image from "next/legacy/image"
-import { useRouter } from "next/router"
 import Link from "next/link"
 
 const MainCont = styled.div`
@@ -18,11 +17,10 @@ const MainCont = styled.div`
 
       padding: 20px 20px;
       position: relative;
-      transition: all .5s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
     @media (min-width: 801px) and (max-width: 1200px) {
       padding: 10px 34px;
-
     }
   }
   .ntxt {
@@ -44,8 +42,8 @@ const MainCont = styled.div`
     font-weight: 700;
     line-height: normal;
     @media (min-width: 801px) and (max-width: 1200px) {
-    font-size: 30px;
-  }
+      font-size: 30px;
+    }
     @media (max-width: 800px) {
       margin-left: 15px;
       font-size: 35px;
@@ -74,30 +72,30 @@ const MainCont = styled.div`
       left: 0;
       width: 100%;
       padding: 20px 0;
-      animation:${({ menuOpen }) => (menuOpen ? "slide 1s ease-in-out 1 forwards" : "revslide 1s ease-in-out 1 forwards")}
-       ;
+      animation: ${({ menuOpen }) =>
+        menuOpen
+          ? "slide 1s ease-in-out 1 forwards"
+          : "revslide 1s ease-in-out 1 forwards"};
     }
   }
 
-  
   @keyframes revslide {
-    0%{
+    0% {
       transform: translateY(-10px);
     }
-    20%{
+    20% {
       transform: translateY(40px);
-
     }
-    100%{
+    100% {
       transform: translateY(-400px);
     }
   }
 
   @keyframes slide {
-    from{
+    from {
       transform: translateY(-400px);
     }
-    to{
+    to {
       transform: translateY(-10px);
     }
   }
@@ -120,14 +118,12 @@ const MainCont = styled.div`
     align-items: center;
     justify-content: center;
     @media (max-width: 800px) {
-        margin-top: 10px;
-        display: none;
+      margin-top: 10px;
+      display: none;
     }
   }
 
-
   .button2 {
-   
   }
 
   .button1:hover {
@@ -144,7 +140,6 @@ const MainCont = styled.div`
     @media (max-width: 800px) {
       margin-left: 0;
     }
-
   }
 
   .nav-line {
@@ -152,83 +147,71 @@ const MainCont = styled.div`
     border: 1px solid #fff;
   }
 
-  
-  .nav-logo{
-
+  .nav-logo {
     @media (min-width: 801px) and (max-width: 1200px) {
-
+    }
   }
-  }
-
-
 
   .menu-button {
     display: none;
 
     @media (max-width: 800px) {
-     height: 50px;
-     width: 50px;
-     display: block;
-     position:relative;
-     display: flex;
-     justify-content: center;
-     align-items:center;
-     cursor:pointer;
-     transition: all .5s ease-in-out;
+      height: 50px;
+      width: 50px;
+      display: block;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
     }
   }
-  .menu-btn_burger{
+  .menu-btn_burger {
     @media (max-width: 800px) {
-     height: 4px;
-     width: 40px;
-     background: #fff;
-     border-radius: 5px;
-     box-shadow: 0 2px 5px rgba(140,133,255,.2);
-     transition: all .5s ease-in-out;
+      height: 4px;
+      width: 40px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(140, 133, 255, 0.2);
+      transition: all 0.5s ease-in-out;
     }
   }
- 
 
-
-  .menu-btn_burger::after,.menu-btn_burger::before{
+  .menu-btn_burger::after,
+  .menu-btn_burger::before {
     @media (max-width: 800px) {
-      content: '';
+      content: "";
       position: absolute;
-     height: 4px;
-     width: 40px;
-     background: #fff;
-     border-radius: 5px;
-     box-shadow: 0 2px 5px rgba(140,133,255,.2);
-     transition: all .5s ease-in-out;
+      height: 4px;
+      width: 40px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(140, 133, 255, 0.2);
+      transition: all 0.5s ease-in-out;
     }
   }
-  .menu-btn_burger::after{
+  .menu-btn_burger::after {
     transform: translateY(12px);
   }
-  .menu-btn_burger::before{
+  .menu-btn_burger::before {
     transform: translateY(-12px);
   }
 
-  .open .menu-btn_burger{
+  .open .menu-btn_burger {
     transform: translateX(-50px);
     background: transparent;
     box-shadow: none;
   }
-  .open .menu-btn_burger::before{
-    transform: rotate(45deg) translate(35px,-35px);
-  
+  .open .menu-btn_burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
   }
-  .open .menu-btn_burger::after{
-    transform: rotate(-45deg) translate(35px,35px);
-
+  .open .menu-btn_burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
   }
-
-
-
 `
 
 function Navbar() {
-  const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -242,56 +225,61 @@ function Navbar() {
   return (
     <MainCont menuOpen={menuOpen}>
       <div className="navbar">
-        <div
-          className="logo-img"
-          onClick={() => router.push("/")}
-        >
-          <Image
-            src={"/clubexcellogo.png"}
-            height={70}
-            width={70}
-            alt="logo"
-            className="nav-logo"
-          />
-          <div className="club-txt">Club Excel</div>
-        </div>
+        <Link href="/">
+          <div className="logo-img">
+            <Image
+              src={"/clubexcellogo.png"}
+              height={70}
+              width={70}
+              alt="logo"
+              className="nav-logo"
+            />
+            <div className="club-txt">Club Excel</div>
+          </div>
+        </Link>
 
         <div className="nav-link">
-
-          <div
-            className="pointer hover ntxt"
-            onClick={()=>{router.push('/');closeMenu();}}            
-          >
-            HOME
-          </div>
-
-          <div
-            className="pointer hover"
-            onClick={() =>{ router.push("/register");closeMenu();}}
-          >
-            REGISTER
-          </div>
-        
+          <Link href="/">
             <div
               className="pointer hover ntxt"
-              onClick={()=>{router.push('/team');closeMenu();}}
+              onClick={closeMenu}
+            >
+              HOME
+            </div>
+          </Link>
+
+          <Link href="/register">
+            <div
+              className="pointer hover ntxt"
+              onClick={closeMenu}
+            >
+              REGISTER
+            </div>
+          </Link>
+
+          <Link href="/team">
+            <div
+              className="pointer hover ntxt"
+              onClick={closeMenu}
             >
               OUR TEAM
             </div>
+          </Link>
         </div>
-        <div
-          className="button1"
-          onClick={() => {router.push("/contact");closeMenu();}}
-        >
-          CONTACT US
-        </div>
+        <Link href="/contact">
+          <div
+            className="button1"
+            onClick={closeMenu}
+          >
+            CONTACT US
+          </div>
+        </Link>
 
         <div
-          className={menuOpen?"open menu-button":"menu-button"}
+          className={menuOpen ? "open menu-button" : "menu-button"}
           onClick={toggleMenu}
         >
           <div className="menu-btn_burger"></div>
-          
         </div>
       </div>
       <div className="nav-line"></div>

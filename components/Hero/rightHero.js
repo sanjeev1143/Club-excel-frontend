@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "next/legacy/image"
-import Loader from "./loder"
 
 const MainCont = styled.div`
   width: fit-content;
@@ -17,7 +16,7 @@ const MainCont = styled.div`
   .hero-gif {
     @media (max-width: 800px) {
       height: 346px;
-    width: 360px;
+      width: 360px;
     }
   }
 `

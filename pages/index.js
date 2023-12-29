@@ -1,25 +1,28 @@
 import Head from "next/head"
-import Image from "next/legacy/image"
+
 import { Inter } from "next/font/google"
 import { styled } from "styled-components"
-import Intro from "@/components/intro"
-import About from "@/components/aboutComp"
+import Intro from "@/components/Intro/intro"
+import About from "@/components/About/about"
 import dynamic from "next/dynamic"
-import QuickContact from "@/components/quickContact"
-import Hero from "@/components/Hero"
-import WhyChoose from "@/components/whyChoose"
-import Loader from "@/components/loder"
+import QuickContact from "@/components/QuickContact/quickContact"
+import Hero from "@/components/Hero/Hero"
+import WhyChoose from "@/components/WhyChooseUs/whyChoose"
 import { Suspense } from "react"
 import { cards } from "@/mock"
-import VideoAnimation from "@/components/VideoAnimation"
+import VideoAnimation from "@/components/VideoAnimation/VideoAnimation"
+import PageMeta from "@/components/Common/PageMeta"
 
-const Carroussel = dynamic(() => import("@/components/carousel"), {
+const Carroussel = dynamic(() => import("@/components/Carroussel/carousel"), {
   ssr: false,
 })
-const ScrollSection = dynamic(() => import("@/components/ScrollSection"), {
-  ssr: false,
-})
-const Card = dynamic(() => import("@/components/Card"), {
+const ScrollSection = dynamic(
+  () => import("@/components/Domains/ScrollSection"),
+  {
+    ssr: false,
+  }
+)
+const Card = dynamic(() => import("@/components/Carroussel/Card"), {
   ssr: false,
 })
 
@@ -40,10 +43,13 @@ const MainCont = styled.div`
 `
 
 export default function Home() {
-
-
   return (
     <>
+      <PageMeta
+        title="Club Excel"
+        description="One of the Top Coding Club in NIST"
+        icon="/clubexcellogo.png"
+      />
       <Head>
         <title>Club Excel</title>
         <meta
@@ -74,7 +80,7 @@ export default function Home() {
           <div className="intro-comp">
             <Intro />
           </div>
-          <VideoAnimation/>
+          <VideoAnimation />
           <About />
           <div className="scrolly">
             <div className="flex-scrolly">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 const MainCont = styled.div`
@@ -147,12 +147,12 @@ const MainCont = styled.div`
 `
 
 function About() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const [count, setCount] = useState(false)
-  const handleVideoClick = () => {
-    setIsVideoPlaying(!isVideoPlaying)
-    setCount(!count)
-  }
+  // const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  // const [count, setCount] = useState(false)
+  // const handleVideoClick = () => {
+  //   setIsVideoPlaying(!isVideoPlaying)
+  //   setCount(!count)
+  // }
 
   return (
     <MainCont>

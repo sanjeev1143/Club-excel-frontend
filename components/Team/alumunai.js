@@ -80,7 +80,6 @@ const MainCont = styled.div`
       margin-left: -800px;
       z-index: 300;
     }
- 
   }
 `
 

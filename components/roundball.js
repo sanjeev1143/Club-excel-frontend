@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import Image from "next/legacy/image"
 import { useInView } from "react-intersection-observer"
 
 const ParentContainer = styled.div`

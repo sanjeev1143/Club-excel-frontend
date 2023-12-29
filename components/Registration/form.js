@@ -8,17 +8,17 @@ import { Modal } from "react-responsive-modal"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { validate } from "email-validator"
-import Loader from "./loder"
+import Loader from "../Common/loder"
 
 const MainCont = styled.div`
-position: absolute;
+  position: absolute;
   @media (max-width: 800px) {
     margin-top: -50px;
     transform: scale(0.8);
   }
   .regd-txt {
     margin-top: 50px;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-family: Poppins;
     font-size: 32px;
     font-style: normal;
@@ -96,7 +96,6 @@ position: absolute;
     transition: width 2s;
     box-shadow: 2px 2px 6px #888888;
   }
-  
 
   .labelc {
     color: #242426;
@@ -176,7 +175,7 @@ position: absolute;
 function Form() {
   const [state, setState] = useState(0)
   const [check, setCheck] = useState(false)
-  const [isLoaded,setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(true)
   const notify = () =>
     toast.error("Oops! It appears that you may have overlooked a few fields.")
 
@@ -213,7 +212,6 @@ function Form() {
       notify()
     }
     setIsLoaded(true)
-
   }
   const [open, setOpen] = useState(false)
   const onOpenModal = () => setOpen(true)
@@ -530,15 +528,12 @@ function Form() {
         pauseOnHover
         theme="dark"
       />
-      {!isLoaded?<Loader/>:""}
+      {!isLoaded ? <Loader /> : ""}
     </MainCont>
   )
 }
 
 export default Form
-
-
-
 
 // const StyleBorder = styled.div`
 
@@ -592,26 +587,17 @@ export default Form
 //     transform: rotate(360deg);
 
 //   }
-  
+
 // }
 
-
 // `
-
-
 
 // function Border() {
 //   return (
 //     <StyleBorder>
 //       <div className='ani-box'>
 
-
 // </div>
 //     </StyleBorder>
 //   )
 // }
-
-
-
-
-
